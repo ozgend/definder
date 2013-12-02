@@ -1,0 +1,10 @@
+﻿<Application x:Class="denolk.DeFinder.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:denolk.DeFinder"  
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <converters:VisibilityConverter x:Key="VisibilityConvert"/>
+        <converters:InverseVisibilityConverter x:Key="InverseVisibilityConvert"/>
+    </Application.Resources>
+</Application>

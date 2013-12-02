@@ -1,0 +1,30 @@
+﻿<Window x:Class="denolk.DeFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="deFinder" Height="600" Width="800" MinWidth="600" MinHeight="600"
+        Icon="definder.ico" WindowStartupLocation="CenterScreen" Name="deFinderWindow" >
+    <DockPanel Height="Auto" Width="Auto" Loaded="DockPanel_Loaded">
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Padding="6,6,6,6" Height="46" FontSize="14" MinWidth="500" VerticalContentAlignment="Center" x:Name="txtDirectory" Grid.Column="0" Grid.RowSpan="2" Text="D:\" FontWeight="Bold" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" BorderThickness="0"/>
+            <TextBox Padding="4,4,4,4" Height="30" FontSize="13" MinWidth="300" x:Name="txtKeyword" Grid.Column="1" FontWeight="Bold" BorderThickness="1,0,0,0" BorderBrush="#FFD2D4DA" />
+            <Label Content="{Binding Path=Items.Count, ElementName=listResult}" ContentStringFormat=" {0} results" FontSize="12" MinWidth="300" MaxWidth="300" Height="16" Grid.Column="1" Grid.Row="2" Padding="0,0,10,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderBrush="#FFD2D4DA" BorderThickness="1,0,0,0" />
+        </Grid>
+        <ListBox x:Name="listResult" DockPanel.Dock="Bottom" BorderThickness="0,1,0,0">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Open File" Tag="0" Click="ContextMenu_Selected" />
+                    <MenuItem Header="Open With ..." Tag="1" Click="ContextMenu_Selected" />
+                    <MenuItem Header="Open Directory" Tag="2" Click="ContextMenu_Selected" />
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+    </DockPanel>
+</Window>
