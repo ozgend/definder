@@ -1,4 +1,5 @@
-packages
+packages/*
 bin
 debug
 obj
+!packages/repositories.config
