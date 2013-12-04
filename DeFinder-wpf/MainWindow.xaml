@@ -13,11 +13,11 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox Padding="6,6,6,6" Height="46" FontSize="14" MinWidth="500" VerticalContentAlignment="Center" x:Name="txtDirectory" Grid.Column="0" Grid.RowSpan="2" Text="D:\" FontWeight="Bold" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" BorderThickness="0"/>
+            <TextBox Padding="6,6,6,6" Height="46" FontSize="14" MinWidth="500" VerticalContentAlignment="Center" x:Name="txtDirectory" Grid.Column="0" Grid.RowSpan="2" Text="e:\movies;e:\downloading" FontWeight="Bold" BorderBrush="{x:Null}" BorderThickness="0"/>
             <TextBox Padding="4,4,4,4" Height="30" FontSize="13" MinWidth="300" x:Name="txtKeyword" Grid.Column="1" FontWeight="Bold" BorderThickness="1,0,0,0" BorderBrush="#FFD2D4DA" />
             <Label Content="{Binding Path=Items.Count, ElementName=listResult}" ContentStringFormat=" {0} results" FontSize="12" MinWidth="300" MaxWidth="300" Height="16" Grid.Column="1" Grid.Row="2" Padding="0,0,10,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderBrush="#FFD2D4DA" BorderThickness="1,0,0,0" />
         </Grid>
-        <ListBox x:Name="listResult" DockPanel.Dock="Bottom" BorderThickness="0,1,0,0">
+        <ListBox x:Name="listResult" DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" FontSize="16">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Open File" Tag="0" Click="ContextMenu_Selected" />

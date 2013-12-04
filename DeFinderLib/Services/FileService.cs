@@ -58,6 +58,7 @@ namespace denolk.DeFinder.Services
 
         public List<string> Filter(string keyword)
         {
+            keyword = keyword.ToLowerInvariant();
             var list = new List<string>();
             if (keyword.Length < 3)
             {
@@ -66,11 +67,11 @@ namespace denolk.DeFinder.Services
             else if (keyword.Contains("*."))
             {
                 keyword = keyword.Replace("*", "");
-                list = _fileList.Where(f => f.EndsWith(keyword)).ToList();
+                list = _fileList.Where(f => f.ToLowerInvariant().EndsWith(keyword)).ToList();
             }
             else
             {
-                list = _fileList.Where(f => f.Contains(keyword)).ToList();
+                list = _fileList.Where(f => f.ToLowerInvariant().Contains(keyword)).ToList();
             }
             return list;
         }
